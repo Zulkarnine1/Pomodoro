@@ -8,9 +8,9 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 5
-SHORT_BREAK_MIN = 1
-LONG_BREAK_MIN = 2
+WORK_MIN = 25
+SHORT_BREAK_MIN = 5
+LONG_BREAK_MIN = 20
 reps = 0
 TICK = "✔"
 timer = None
@@ -61,7 +61,7 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f"{minutes}:{sec}")
     if count>0:
         global timer
-        timer = window.after(50,count_down,count-1)
+        timer = window.after(1000,count_down,count-1)
     else:
         start_timer()
         if reps%2==0:
